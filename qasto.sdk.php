@@ -18,7 +18,7 @@ if (!function_exists('json_decode')) {
 
 class Qasto {
   
-
+/* Static Parameters */
    
    var $base_url = 'https://www.qasto.com/';
    
@@ -320,7 +320,11 @@ function base64_url_decode($input) {
     return $this->signedRequest;
   }
   
-  
+ /**
+* Get the data from a signed_request token
+*
+* @return Boolean of the user status
+*/  
  public function getStatus() {
 
   session_start(); 
@@ -368,7 +372,11 @@ function base64_url_decode($input) {
     }
  
  
-
+ /**
+* Get data from API REST SERVER and Use access_token to autheticate
+*
+* @return Array API response in JSON otherwise display error in JSON response
+*/  
   
   
 function api($i)
