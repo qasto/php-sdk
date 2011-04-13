@@ -33,7 +33,7 @@ $info = $qasto->api('info');
     
 ?>
 <p>You are logged in <?php echo $info->first_name; ?> <?php echo $info->last_name; ?>.</p>
-<p>Please <a href="<?php echo $login_url;?>">Click Here</a> to login</p>
+<p>Please <a href="<?php echo $login_url;?>">Click Here</a> to logout</p>
 <h1>Your Premium Content</h1>
 <img src='<?php echo $info->picture; ?>'>
 
@@ -43,3 +43,5 @@ $info = $qasto->api('info');
 
 ?>
 </div>
+
+<?php print_r($_SESSION); ?>

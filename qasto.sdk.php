@@ -7,7 +7,7 @@
  * @package         Qasto
  * @subpackage      SDK-Libraries
  * @category      Libraries
- * @author          Alex
+ * @author          Qasto Team
  */
 if (!function_exists('curl_init')) {
   throw new Exception('Qasto needs the CURL PHP extension.');
@@ -20,15 +20,15 @@ class Qasto {
   
 
    
-   var $base_url = 'https://www.qasto.com/';
+   var $base_url = 'http://localhost/a3m/';
    
-   var $api_url  = 'https://www.qasto.com/developer/api/';
+   var $api_url  = 'http://localhost/a3m/developer/api/';
    
-   var $auth_url = 'https://www.qasto.com/developer/oauth/authorize?';
+   var $auth_url = 'http://localhost/a3m/developer/oauth/authorize?';
   
-   var $logout_url = 'https://www.qasto.com/developer/oauth/sign_out?';
+   var $logout_url = 'http://localhost/a3m/developer/oauth/sign_out?';
    
-   var $token_url = 'https://www.qasto.com/developer/oauth/access_token?';
+   var $token_url = 'http://localhost/a3m/developer/oauth/access_token?';
    
 /**
    * The Application Client ID
@@ -276,7 +276,7 @@ return json_decode($this->make_request($url));
 }
 
 function parseSignedRequest($signed_request, $secret) {
-  list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
+  list($encoded_sig, $payload) = explode('.', $signed_request,2); 
 
   // decode the data
   $sig = $this->base64_url_decode($encoded_sig);
@@ -322,7 +322,9 @@ function base64_url_decode($input) {
   
   
  public function getStatus() {
-  
+
+  session_start(); 
+         
   if(isset($_REQUEST['status']))
   {
     session_unset('access_token');
@@ -344,9 +346,6 @@ function base64_url_decode($input) {
          // sig is good, use the signedRequest
          
 
-        
-        session_start(); 
-        
           foreach($signedRequest as $k => $v)
           {
          
