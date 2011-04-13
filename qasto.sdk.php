@@ -20,15 +20,15 @@ class Qasto {
   
 
    
-   var $base_url = 'http://localhost/a3m/';
+   var $base_url = 'https://www.qasto.com/';
    
-   var $api_url  = 'http://localhost/a3m/developer/api/';
+   var $api_url  = 'https://www.qasto.com/developer/api/';
    
-   var $auth_url = 'http://localhost/a3m/developer/oauth/authorize?';
+   var $auth_url = 'https://www.qasto.com/developer/oauth/authorize?';
   
-   var $logout_url = 'http://localhost/a3m/developer/oauth/sign_out?';
+   var $logout_url = 'https://www.qasto.com/developer/oauth/sign_out?';
    
-   var $token_url = 'http://localhost/a3m/developer/oauth/access_token?';
+   var $token_url = 'https://www.qasto.com/developer/oauth/access_token?';
    
 /**
    * The Application Client ID
